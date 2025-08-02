@@ -4,10 +4,19 @@ from pages.LoginPage import LoginPageHelper
 
 BASE_URL = 'https://ok.ru/'
 EMPTY_LOGIN_ERROR = 'Введите логин'
+LOGIN_WITHOUT_PASSWORD = 'Введите пароль'
 
 
-def test_empty_login_end_password(browser):
+def test_empty_login_and_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
     LoginPage.click_login()
     assert LoginPage.get_error_text() == EMPTY_LOGIN_ERROR
+
+
+def test_login_without_password(browser):
+    BasePage(browser).get_url(BASE_URL)
+    LoginPage = LoginPageHelper(browser)
+    LoginPage.input_login_without_password()
+    LoginPage.click_login()
+    assert LoginPage.get_error_text() == LOGIN_WITHOUT_PASSWORD

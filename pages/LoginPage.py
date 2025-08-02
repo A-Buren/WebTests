@@ -39,5 +39,8 @@ class LoginPageHelper(BasePage):
     def click_login(self):
         self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
 
+    def input_login_without_password(self):
+        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys("абырвалг@mail.ru")
+
     def get_error_text(self):
         return self.find_element(LoginPageLocators.ERROR_TEXT).text

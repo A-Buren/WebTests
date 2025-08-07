@@ -22,6 +22,6 @@ def test_empty_login_and_password(browser):
 def test_login_without_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
-    LoginPage.input_login_without_password()
+    LoginPage.input_login()
     LoginPage.click_login()
     assert LoginPage.get_error_text() == LOGIN_WITHOUT_PASSWORD

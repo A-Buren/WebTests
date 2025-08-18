@@ -2,7 +2,7 @@ from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 import allure
 
-from pages.RecoveryPage import RecoveryPageHelperHelpers, RecoveryPageLocators
+from pages.RecoveryPage import RecoveryPageHelper, RecoveryPageLocators
 
 
 class LoginPageLocators:
